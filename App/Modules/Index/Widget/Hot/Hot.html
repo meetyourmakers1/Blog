@@ -1,0 +1,10 @@
+<!--热门博客模板-->
+<dl>
+    <dt>热门博客</dt>
+    <foreach name="blog" item="v">
+        <dd>
+            <a href="{:U('/show_'.$v['id'])}">{$v.title}</a>
+            <span>({$v.click})</span>
+        </dd>
+    </foreach>
+</dl>

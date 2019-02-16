@@ -1,0 +1,48 @@
+</head>
+<body>
+<!--头部-->
+<div class='top-search-wrap'>
+    <div class='top-search'>
+        <a href="http://bbs.houdunwang.com" target='_blank' class='logo'>
+            <img src="__PUBLIC__/Images/logo.png"/>
+        </a>
+        <div class='search-wrap'>
+            <form action="" method='get'>
+                <input type="text" name='keyword' class='search-content'/>
+                <input type="submit" name='search' value='搜索'/>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<php>
+    $cate = M('cate') -> order('sort') -> select();
+    import('Class.Cate',APP_PATH);
+    $cate = Cate::unlimitedmany($cate);
+</php>-->
+<div class='top-nav-wrap'>
+    <ul class='nav-lv1'>
+        <li class='nav-lv1-li'>
+            <a href="__GROUP__" class='top-cate'>博客首页</a>
+        </li>
+        <nav order="sort">
+            <li class='nav-lv1-li'>
+                <a href="{$url}" class='top-cate'>{$name}</a>
+                <ul>
+                    <foreach name="child" item="v">
+                        <li><a href="{:U('/list_'.$v['id'])}">{$v.name}</a>
+                    </foreach>
+                </ul>
+            </li>
+        </nav>
+        <!--<foreach name="cate" item="v">
+            <li class='nav-lv1-li'>
+                <a href="" class='top-cate'>{$v.name}</a>
+                <ul>
+                    <foreach name="v.child" item="val">
+                        <li><a href="">{$val.name}</a>
+                    </foreach>
+                </ul>
+            </li>
+        </foreach>-->
+    </ul>
+</div>

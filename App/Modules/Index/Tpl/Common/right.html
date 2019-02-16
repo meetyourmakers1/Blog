@@ -1,0 +1,30 @@
+<!--主体右侧-->
+<div class='main-right'>
+    <!--热门博客-->
+    {:W('Hot')}
+    {:W('Hot')}
+
+    <dl>
+        <dt>最新发布</dt>
+        <new limit="5">
+            <dd>
+                <a href="{:U($url)}">{$title}</a>
+                <span>({$click})</span>
+            </dd>
+        </new>
+    </dl>
+
+    <dl>
+        <dt>友情连接</dt>
+        <dd>
+            <a href="">Google</a>
+        </dd>
+
+        <dd>
+            <a href="">Firefox</a>
+        </dd>
+        <dd>
+            <a href="">php官网</a>
+        </dd>
+    </dl>
+</div>

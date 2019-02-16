@@ -1,0 +1,25 @@
+<include file="Common:header"/>
+    <link rel="stylesheet" href="__PUBLIC__/Css/index.css" />
+<include file="Common:nav"/>
+<!--主体-->
+<div class='main'>
+    <div class='main-left'>
+        <p>全部博客</p>
+        <foreach name="topCate" item="v">
+            <dl>
+                <dt>{$v.name}<a href="{:U('/list_'.$v['id'])}">更多>></a></dt>
+                <foreach name="v.blog" item="blog">
+                    <dd>
+                        <a href="{:U('/show_'.$blog['id'])}">{$blog.title}</a>
+                        <foreach name="blog.attr" item="attr">
+                            <a style="font-size:10px;padding:0px 2px;color:{$attr.color}">[{$attr.name}]</a>
+                        </foreach>
+                        <span>{$blog.time|date='Y/m/d',###}</span>
+                    </dd>
+                </foreach>
+            </dl>
+        </foreach>
+    </div>
+    <include file="Common:right"/>
+</div>
+<include file="Common:bottom"/>
